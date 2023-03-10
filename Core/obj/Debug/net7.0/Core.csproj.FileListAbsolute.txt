@@ -1,0 +1,12 @@
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\bin\Debug\net7.0\Core.deps.json
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\bin\Debug\net7.0\Core.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\bin\Debug\net7.0\Core.pdb
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.csproj.AssemblyReference.cache
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.AssemblyInfoInputs.cache
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.AssemblyInfo.cs
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.csproj.CoreCompileInputs.cache
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\refint\Core.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.pdb
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\ref\Core.dll
