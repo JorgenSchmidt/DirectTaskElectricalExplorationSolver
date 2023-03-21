@@ -3,10 +3,30 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DirectTaskElectricalExplorationSolver.Views"
+        xmlns:local="clr-namespace:DirectTaskElectricalExplorationSolver.ViewModels"
         mc:Ignorable="d"
-        Title="AppWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="Моделирование задач электротомографии на примере шара (Кузнецов Г.А., Кузнецова А.В.)" Height="660" Width="1200" ResizeMode="NoResize">
+    <Window.DataContext>
+        <local:AppWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <Label Margin="10,10,0,0" Height="30" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Количество пикетов:" />
+        <TextBox Text="{Binding PicketCount}" Margin="10,40,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,70,0,0" Height="30" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение MN/2 (м):" />
+        <TextBox Text="{Binding HalfDistanceBetweenMN}" Margin="10,100,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,130,0,0" Height="30" Width="350" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение сопротивления вмещающих пород (ρ1, Ом*м):" />
+        <TextBox Text="{Binding HostResistance}" Margin="10,160,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,190,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение сопротивления шара (ρ2, Ом*м):" />
+        <TextBox Text="{Binding SphereResistance}" Margin="10,220,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,250,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Сила тока (I, A):" />
+        <TextBox Text="{Binding AmperageStrength}" Margin="10,280,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,310,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Глубина залегания шара (h, м):" />
+        <TextBox Text="{Binding SphereDepth}" Margin="10,340,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,370,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Радиус шара (R, м):" />
+        <TextBox Text="{Binding SphereRadius}" Margin="10,400,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,470,0,0" Height="30" Width="400" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Директория, в которую необходимо загрузить полученные данные:" />
+        <TextBox Text="{Binding DirectoryPath}" Margin="10,500,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Command="{Binding Calculate}" Margin="10,545,0,0" Height="50" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Рассчитать кажущееся сопротивление среды"/>
     </Grid>
 </Window>
