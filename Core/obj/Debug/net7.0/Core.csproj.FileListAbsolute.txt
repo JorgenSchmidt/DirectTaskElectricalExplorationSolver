@@ -10,3 +10,5 @@ D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Co
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\refint\Core.dll
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.pdb
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\ref\Core.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\bin\Debug\net7.0\PresentationCore.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Core\obj\Debug\net7.0\Core.csproj.CopyComplete

@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<ItemGroup>
+		<Reference Include="PresentationCore">
+			<HintPath>..\..\..\..\codes\cslibs\presentationcore.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
 </Project>

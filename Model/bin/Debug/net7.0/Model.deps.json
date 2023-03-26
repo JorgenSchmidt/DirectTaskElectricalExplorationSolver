@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "Model/1.0.0": {
         "dependencies": {
-          "Core": "1.0.0"
+          "Core": "1.0.0",
+          "presentationcore": "3.0.0.0"
         },
         "runtime": {
           "Model.dll": {}
@@ -17,6 +18,14 @@
       "Core/1.0.0": {
         "runtime": {
           "Core.dll": {}
+        }
+      },
+      "presentationcore/3.0.0.0": {
+        "runtime": {
+          "presentationcore.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.6920.5442"
+          }
         }
       }
     }
@@ -29,6 +38,11 @@
     },
     "Core/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "presentationcore/3.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectTaskElectricalExplorationSolver", "DirectTaskElectricalExplorationSolver.csproj", "{3031F512-B8BF-4B6D-8E56-EFF508B3F17D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "..\Core\Core.csproj", "{AF84FCAA-7981-4C56-AE78-E1CC0E620643}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "..\Core\Core.csproj", "{AF84FCAA-7981-4C56-AE78-E1CC0E620643}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "..\Model\Model.csproj", "{0AE5D702-0FF5-4D6D-977B-8A87BC424039}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "..\Model\Model.csproj", "{0AE5D702-0FF5-4D6D-977B-8A87BC424039}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

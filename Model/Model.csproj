@@ -11,7 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CalculateAnomalyValueService\" />
+    <Folder Include="GraphicShell\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <HintPath>..\..\..\..\codes\cslibs\presentationcore.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

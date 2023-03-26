@@ -13,3 +13,4 @@ D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0\M
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0\refint\Model.dll
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0\Model.pdb
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0\ref\Model.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0\PresentationCore.dll
