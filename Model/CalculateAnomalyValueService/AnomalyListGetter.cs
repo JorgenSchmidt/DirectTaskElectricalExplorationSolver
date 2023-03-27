@@ -33,11 +33,11 @@ namespace Model.CalculateAnomalyValueService
             // Левый электрод-источник
             double A = StartProfilePoint;
             // Левый регистрирующий электрод
-            double M = A + SourseReadStepCount*StepByProfile;
+            double M = Math.Round(A + SourseReadStepCount * StepByProfile, 4);
             // Правый регистрирующий электрод
-            double N = M + StepByProfile;
+            double N = Math.Round(M + StepByProfile, 4);
             // Правый электрод-источник
-            double B = N + SourseReadStepCount * StepByProfile;
+            double B = Math.Round(N + SourseReadStepCount * StepByProfile, 4);
             // Показатель L
             double L = Math.Sqrt(Math.Pow(A - (M+N)/2 ,2));
             // Коэффициент установки
@@ -80,10 +80,10 @@ namespace Model.CalculateAnomalyValueService
                         Value = (valLeft + valRight)/2
                     }
                 );
-                A += StepByProfile;
-                M += StepByProfile;
-                N += StepByProfile;
-                B += StepByProfile;
+                A = Math.Round(A + StepByProfile, 4);
+                M = Math.Round(M + StepByProfile, 4);
+                N = Math.Round(N + StepByProfile, 4);
+                B = Math.Round(B + StepByProfile, 4);
             }
 
             return Answer;

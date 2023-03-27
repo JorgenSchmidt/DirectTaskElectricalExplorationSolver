@@ -7,14 +7,14 @@
         xmlns:core="clr-namespace:Core.Entities.GraphicShellEntities;assembly=Core"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Моделирование задач электротомографии на примере шара (Кузнецов Г.А., Кузнецова А.В.)" Height="700" Width="1200" ResizeMode="NoResize">
+        Title="Моделирование задач электротомографии на примере шара (Кузнецов Г.А., Кузнецова А.В.)" Height="700" Width="1500" ResizeMode="NoResize">
     <Window.DataContext>
         <local:AppWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Rectangle Margin="459,39,0,0" Height="602" Width="702" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" />
-        <Viewbox Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,40,0,0" Width="700" Height="600">
-            <ItemsControl ItemsSource="{Binding AnomalyModelLines}" Width="700" Height="600" >
+        <Rectangle Margin="459,39,0,0" Height="{Binding FrameHeight}" Width="{Binding FrameWidth}" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" />
+        <Viewbox Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,40,0,0" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}">
+            <ItemsControl ItemsSource="{Binding AnomalyModelLines}" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}" >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas />
@@ -33,8 +33,8 @@
             </ItemsControl>
         </Viewbox>
 
-        <Viewbox Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,40,0,0" Width="700" Height="600">
-            <ItemsControl ItemsSource="{Binding AnomalyModelSpheres}" Width="700" Height="600" >
+        <Viewbox Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,40,0,0" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}">
+            <ItemsControl ItemsSource="{Binding AnomalyModelSpheres}" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}" >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas/>
@@ -53,8 +53,8 @@
             </ItemsControl>
         </Viewbox>
 
-        <Viewbox Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,40,0,0" Width="700" Height="600">
-            <ItemsControl ItemsSource="{Binding TextLabels}" Width="700" Height="600" >
+        <Viewbox Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="460,40,0,0" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}">
+            <ItemsControl ItemsSource="{Binding TextLabels}" Width="{Binding CanvasWidth}" Height="{Binding CanvasHeight}" >
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <Canvas/>

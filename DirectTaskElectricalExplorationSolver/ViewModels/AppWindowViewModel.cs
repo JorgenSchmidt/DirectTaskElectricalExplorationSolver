@@ -3,6 +3,8 @@ using Core.Entities.GraphicShellEntities;
 using DirectTaskElectricalExplorationSolver.AppServise;
 using GFDirectTasksSolver.ViewModelService;
 using Model.CalculateAnomalyValueService;
+using Model.GraphicShell;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
@@ -12,8 +14,63 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
 {
     public class AppWindowViewModel : NotifyPropertyChanged
     {
+        #region конфигурация основных графических элементов
+        public int canvasWidth = GraphicShellConfiguration.CanvasWidth;
+        public int CanvasWidth
+        {
+            get
+            {
+                return canvasWidth;
+            }
+            set
+            {
+                canvasWidth = value;
+                CheckChanges();
+            }
+        }
+        public int canvasHeight = GraphicShellConfiguration.CanvasHeight;
+        public int CanvasHeight
+        {
+            get
+            {
+                return canvasHeight;
+            }
+            set
+            {
+                canvasHeight = value;
+                CheckChanges();
+            }
+        }
+        public int frameWidth = GraphicShellConfiguration.CanvasWidth + 2;
+        public int FrameWidth
+        {
+            get
+            {
+                return frameWidth;
+            }
+            set
+            {
+                frameWidth = value;
+                CheckChanges();
+            }
+        }
+        public int frameHeight = GraphicShellConfiguration.CanvasHeight + 2;
+        public int FrameHeight
+        {
+            get
+            {
+                return frameHeight;
+            }
+            set
+            {
+                frameHeight = value;
+                CheckChanges();
+            }
+        }
+        #endregion
+
         #region переменные для взаимодействия с графическими элементами приложения
-        public List<Line> anomalyModelLines = new List<Line>();
+        public List<Line> anomalyModelLines = new List<Line>() ;
 
         public List<Line> AnomalyModelLines
         {
@@ -187,7 +244,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             get
             {
                 return new Command(
-                    (obj) =>
+                (obj) =>
                     {
                         // Блок обработки исключительных случаев
                         if (PicketCount < 4 || PicketCount % 2 == 1)
@@ -252,10 +309,10 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                             + " h-" + SphereDepth.ToString() + "м";
 
                         // Блок начала расчётов
-                        double ProfileLength = 2 * (PicketCount - 1) * (HalfDistanceBetweenMN);
-                        double StartProfilePoint = (ProfileLength / 2) * -1;
-                        double EndProfilePoint = (ProfileLength / 2);
-                        double StepByProfile = HalfDistanceBetweenMN * 2;
+                        double ProfileLength = Math.Round(2 * (PicketCount - 1) * (HalfDistanceBetweenMN), 4);
+                        double StartProfilePoint = Math.Round((ProfileLength / 2) * -1, 4);
+                        double EndProfilePoint = Math.Round((ProfileLength / 2), 4);
+                        double StepByProfile = Math.Round(HalfDistanceBetweenMN * 2, 2);
 
                         // Блок присваивания полю AnomalyObjects объекта с именем anomalyDescription значения из метода
                         anomalyDescription.AnomalyObjects = AnomalyDescriptionGetter.GetAnomalyDescription(
@@ -273,14 +330,8 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                                                                                                             AmperageStrength
                                                                                                         ).AnomalyObjects;
 
-
-                        TextLabels = new List<TextLabel>() { 
-                            new TextLabel() { Text = ProfileLength.ToString(), X = 60, Y = 80 },
-                            new TextLabel() { Text = StartProfilePoint.ToString(), X = 60, Y = 100 },
-                            new TextLabel() { Text = EndProfilePoint.ToString(), X = 60, Y = 120 },
-                            new TextLabel() { Text = anomalyDescription.AnomalyDescription, X = 30, Y = 60 },
-                        };
-
+                        AnomalyModelLines = LineSketcher.DrawLines(anomalyDescription);
+                        AnomalyModelSpheres= SphereSketcher.DrawSpheres(ProfileLength, anomalyDescription);
 
                     }
                 );
