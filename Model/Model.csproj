@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="StringConcatenateService\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="PresentationCore">
       <HintPath>..\..\..\..\codes\cslibs\presentationcore.dll</HintPath>
     </Reference>

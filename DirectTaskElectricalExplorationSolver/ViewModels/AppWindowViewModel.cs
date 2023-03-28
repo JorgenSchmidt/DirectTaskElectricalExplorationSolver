@@ -4,9 +4,11 @@ using DirectTaskElectricalExplorationSolver.AppServise;
 using GFDirectTasksSolver.ViewModelService;
 using Model.CalculateAnomalyValueService;
 using Model.GraphicShell;
+using Model.StringOperationService;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -244,7 +246,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             get
             {
                 return new Command(
-                (obj) =>
+                async (obj) =>
                     {
                         // Блок обработки исключительных случаев
                         if (PicketCount < 4 || PicketCount % 2 == 1)
@@ -303,7 +305,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                         anomalyDescription.AnomalyDescription =
                               "ВЭЗ ПКК-" + PicketCount.ToString()
                             + " MN-" + (HalfDistanceBetweenMN * 2).ToString() + "м"
-                            + " dρ-" + (HostResistance - SphereResistance).ToString() + "Ом°м"
+                            + " dρ-" + (Math.Round(HostResistance - SphereResistance,6)).ToString() + "Ом°м"
                             + " I-" + AmperageStrength.ToString() + "A" 
                             + " R-" + SphereRadius.ToString() + "м"
                             + " h-" + SphereDepth.ToString() + "м";
@@ -330,9 +332,23 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                                                                                                             AmperageStrength
                                                                                                         ).AnomalyObjects;
 
+                        // Операции с переменными, ассоциированными с графической составляющей приложения
                         AnomalyModelLines = LineSketcher.DrawLines(anomalyDescription);
-                        AnomalyModelSpheres= SphereSketcher.DrawSpheres(ProfileLength, anomalyDescription);
+                        AnomalyModelSpheres = SphereSketcher.DrawSpheres(ProfileLength, PicketCount, SphereDepth, SphereRadius, anomalyDescription);
+                        if (PicketCount < 40)
+                        {
+                            TextLabels = TextSketcher.WriteLabels(PicketCount, AnomalyModelSpheres);
+                        }
+                        else
+                        {
+                            TextLabels = new List<TextLabel>();
+                        }
 
+                        // Операции с файлом вывода информации (формат .dat)
+                        using (StreamWriter writer = new StreamWriter(DirectoryPath + "\\" + anomalyDescription.AnomalyDescription + ".dat", false))
+                        {
+                            await writer.WriteLineAsync(DescriptionToStringTranslator.Translate(anomalyDescription));
+                        }
                     }
                 );
             }

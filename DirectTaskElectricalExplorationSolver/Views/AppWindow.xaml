@@ -7,7 +7,7 @@
         xmlns:core="clr-namespace:Core.Entities.GraphicShellEntities;assembly=Core"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Моделирование задач электротомографии на примере шара (Кузнецов Г.А., Кузнецова А.В.)" Height="700" Width="1500" ResizeMode="NoResize">
+        Title="Моделирование задач электротомографии на примере шара (Кузнецов Г.А., Кузнецова А.В.) v.0.0.1.1" Height="700" Width="1500" ResizeMode="NoResize">
     <Window.DataContext>
         <local:AppWindowViewModel/>
     </Window.DataContext>
@@ -67,7 +67,7 @@
                     </Style>
                     <!-- В DataTemplate прописываем путь к классу абстракции выводимого на канвас текста -->
                     <DataTemplate DataType="{x:Type core:TextLabel}">
-                        <Label Margin="{Binding TextMargin}" Content="{Binding Text}" />
+                        <Label Margin="{Binding TextMargin}" Content="{Binding Text}" FontSize="{Binding FontSize}" />
                     </DataTemplate>
                 </ItemsControl.Resources>
             </ItemsControl>

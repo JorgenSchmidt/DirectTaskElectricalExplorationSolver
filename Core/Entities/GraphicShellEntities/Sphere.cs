@@ -16,6 +16,7 @@ namespace Core.Entities.GraphicShellEntities
         /// Цвет линии
         /// </summary>
         public SolidColorBrush Color { get; set; }
-
+        public double AnomalyValueOnPoint { get; set; }
+        public bool CanBeSigned { get; set; }
     }
 }

@@ -6,5 +6,6 @@
         public int Y { get; set; }
         public string Text { get; set; }
         public object TextMargin { get; set; }
+        public int FontSize { get; set; }
     }
 }

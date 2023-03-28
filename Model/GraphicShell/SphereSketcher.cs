@@ -6,7 +6,7 @@ namespace Model.GraphicShell
 {
     public class SphereSketcher
     {
-        public static List<Sphere> DrawSpheres (double ProfileLength, Description AnomalyDescription)
+        public static List<Sphere> DrawSpheres (double ProfileLength, double PicketCount, double SphereDepth, double SphereRadius, Description AnomalyDescription)
         {
             List<Sphere> Answer = new List<Sphere>();
 
@@ -17,14 +17,11 @@ namespace Model.GraphicShell
                 if (l.H > MaxDepth) MaxDepth = l.H;
             }
 
-            /*// Нахождение максимального значения координаты Х среди точек наблюдения
-            var MaxCoordinateX = AnomalyDescription.AnomalyObjects[0]
-                                .Values[AnomalyDescription.AnomalyObjects[0].Values.Count - 1].X;*/
-
-            // Поправочные коэффициенты на размер полотна отрисовки приложения
+            // Поправочные коэффициенты на размер полотна отрисовки элементов
             var TranslateKoefficient_X = (GraphicShellConfiguration.CanvasWidth - 100) / ProfileLength;
-            var TranslateKoefficient_Y = (GraphicShellConfiguration.CanvasHeight - 100) / MaxDepth;
+            var TranslateKoefficient_Y = (GraphicShellConfiguration.CanvasHeight - 150) / MaxDepth;
 
+            // Расчёт координат и геометрии для точек наблюдения
             foreach (var Profile in AnomalyDescription.AnomalyObjects)
             {
                 foreach (var Value in Profile.Values)
@@ -32,15 +29,30 @@ namespace Model.GraphicShell
                     Answer.Add(
                         new Sphere
                         {
-                            X = Convert.ToInt32((Value.X) * TranslateKoefficient_X) + 500 ,
-                            Y = Convert.ToInt32(Value.H * TranslateKoefficient_Y) + 50,
+                            X = Convert.ToInt32((Value.X) * TranslateKoefficient_X) + 500 - Convert.ToInt32(100 / PicketCount)/2,
+                            Y = Convert.ToInt32(Value.H * TranslateKoefficient_Y) + 50 - Convert.ToInt32(100 / PicketCount)/2,
                             Color = Brushes.Black,
-                            Radius = Convert.ToInt32(100 / ProfileLength) + 1,
+                            Radius = Convert.ToInt32(100 / PicketCount) + 1,
                             StrokeThicknessValue = 1,
+                            AnomalyValueOnPoint = Value.Value,
+                            CanBeSigned = true
                         }
                     );
                 }
             }
+
+            // Расчёт координат и геометрии для моделируемого шара
+            Answer.Add(
+                new Sphere ()
+                {
+                    X = 500 - Convert.ToInt32(SphereRadius * TranslateKoefficient_Y)/2,
+                    Y = Convert.ToInt32(SphereDepth * TranslateKoefficient_Y) + 50 - Convert.ToInt32(SphereRadius * TranslateKoefficient_Y) / 2,
+                    Color = Brushes.Red,
+                    Radius = Convert.ToInt32(SphereRadius * TranslateKoefficient_Y) + 1,
+                    StrokeThicknessValue = 2,
+                    CanBeSigned = false
+                }    
+            );
 
             return Answer;
         }
