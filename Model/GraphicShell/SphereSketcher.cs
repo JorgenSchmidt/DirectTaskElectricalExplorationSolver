@@ -41,6 +41,22 @@ namespace Model.GraphicShell
                 }
             }
 
+            // Расчёт координат и геометрии для точек-пикетов
+            for (int i = 0; i < PicketCount; i++)
+            {
+                Answer.Add(
+                    new Sphere()
+                    {
+                        X = 50 - Convert.ToInt32(100 / PicketCount) / 2 + Convert.ToInt32((i * (ProfileLength / (PicketCount - 1))) * TranslateKoefficient_X),
+                        Y = 50 - Convert.ToInt32(100 / PicketCount) / 2,
+                        Color = Brushes.Blue,
+                        Radius = Convert.ToInt32(100 / PicketCount) + 1,
+                        StrokeThicknessValue = 1,
+                        CanBeSigned = false
+                    }
+                );
+            }
+
             // Расчёт координат и геометрии для моделируемого шара
             Answer.Add(
                 new Sphere ()
