@@ -289,9 +289,9 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                             MessageBox.Show("Значение радиуса шара не может быть меньше или равно \"0\".");
                             return;
                         }
-                        if (SphereRadius >= SphereDepth)
+                        if (SphereDepth < 1.5 * SphereRadius)
                         {
-                            MessageBox.Show("Значение радиуса шара не может быть больше или равно значению глубины его залегания.");
+                            MessageBox.Show("Значение глубины залегания шара должно превышать его радиус более чем в 1.5 раза.");
                             return;
                         }
                         if (!Directory.Exists(DirectoryPath))
