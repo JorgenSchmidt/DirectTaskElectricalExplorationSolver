@@ -77,16 +77,16 @@
         <TextBox Text="{Binding PicketCount}" Margin="10,40,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Margin="10,70,0,0" Height="30" Width="140" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение MN/2 (м):" />
         <TextBox Text="{Binding HalfDistanceBetweenMN}" Margin="10,100,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Margin="10,150,0,0" Height="30" Width="350" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение сопротивления вмещающих пород (ρ1, Ом*м):" />
-        <TextBox Text="{Binding HostResistance}" Margin="10,180,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Margin="10,210,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение сопротивления шара (ρ2, Ом*м):" />
-        <TextBox Text="{Binding SphereResistance}" Margin="10,240,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Margin="10,270,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Сила тока (I, A):" />
-        <TextBox Text="{Binding AmperageStrength}" Margin="10,300,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Margin="10,350,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Глубина залегания шара (h, м):" />
-        <TextBox Text="{Binding SphereDepth}" Margin="10,380,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <Label Margin="10,410,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Радиус шара (R, м):" />
-        <TextBox Text="{Binding SphereRadius}" Margin="10,440,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,130,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Сила тока (I, A):" />
+        <TextBox Text="{Binding AmperageStrength}" Margin="10,160,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,220,0,0" Height="30" Width="350" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение сопротивления вмещающих пород (ρ1, Ом*м):" />
+        <TextBox Text="{Binding HostResistance}" Margin="10,250,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,280,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Значение сопротивления шара (ρ2, Ом*м):" />
+        <TextBox Text="{Binding SphereResistance}" Margin="10,310,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,370,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Глубина залегания шара (h, м):" />
+        <TextBox Text="{Binding SphereDepth}" Margin="10,400,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Margin="10,430,0,0" Height="30" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Радиус шара (R, м):" />
+        <TextBox Text="{Binding SphereRadius}" Margin="10,460,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Margin="10,530,0,0" Height="30" Width="400" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Директория, в которую необходимо загрузить полученные данные:" />
         <TextBox Text="{Binding DirectoryPath}" Margin="10,560,0,0" Height="30" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Button Command="{Binding Calculate}" Margin="10,601,0,0" Height="40" Width="420" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Рассчитать кажущееся сопротивление среды"/>
