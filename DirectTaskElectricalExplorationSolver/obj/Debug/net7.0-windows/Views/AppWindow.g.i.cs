@@ -54,7 +54,7 @@ namespace DirectTaskElectricalExplorationSolver.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DirectTaskElectricalExplorationSolver;V1.0.0.0;component/views/appwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DirectTaskElectricalExplorationSolver;component/views/appwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\AppWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

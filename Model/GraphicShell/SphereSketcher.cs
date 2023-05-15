@@ -9,13 +9,16 @@ namespace Model.GraphicShell
         public static List<Sphere> DrawSpheres (double ProfileLength, double PicketCount, double SphereDepth, double SphereRadius, Description AnomalyDescription)
         {
             List<Sphere> Answer = new List<Sphere>();
-
+            
             // Нахождение максимального значения глубины среди точек наблюдения
             var MaxDepth = Double.MinValue;
             foreach (var l in AnomalyDescription.AnomalyObjects[AnomalyDescription.AnomalyObjects.Count - 1].Values)
             {
                 if (l.H > MaxDepth) MaxDepth = l.H;
             }
+
+            // Нахождение диаметра шара
+            double SphereDiameter = SphereRadius * 2;
 
             // Поправочные коэффициенты на размер полотна отрисовки элементов
             var TranslateKoefficient_X = (GraphicShellConfiguration.CanvasWidth - 100) / ProfileLength;
@@ -61,10 +64,10 @@ namespace Model.GraphicShell
             Answer.Add(
                 new Sphere ()
                 {
-                    X = 500 - Convert.ToInt32(SphereRadius * TranslateKoefficient_Y)/2,
-                    Y = Convert.ToInt32(SphereDepth * TranslateKoefficient_Y) + 50 - Convert.ToInt32(SphereRadius * TranslateKoefficient_Y) / 2,
+                    X = 500 - Convert.ToInt32(SphereDiameter * TranslateKoefficient_Y)/2,
+                    Y = Convert.ToInt32(SphereDepth * TranslateKoefficient_Y) + 50 - Convert.ToInt32(SphereDiameter * TranslateKoefficient_Y) / 2,
                     Color = Brushes.Red,
-                    Radius = Convert.ToInt32(SphereRadius * TranslateKoefficient_Y) + 1,
+                    Radius = Convert.ToInt32(SphereDiameter * TranslateKoefficient_Y) + 1,
                     StrokeThicknessValue = 2,
                     CanBeSigned = false
                 }    
