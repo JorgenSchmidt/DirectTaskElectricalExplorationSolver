@@ -18,8 +18,6 @@ namespace Model.StringOperationService
                 }
             }
 
-            Answer = count.ToString() + " 1\n" + Answer;
-
             return Answer.Replace(",", ".");
         }
     }

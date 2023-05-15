@@ -7,7 +7,7 @@
         xmlns:core="clr-namespace:Core.Entities.GraphicShellEntities;assembly=Core"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Моделирование задач электротомографии на примере шара (Кузнецов Г.А., Кузнецова А.В.) v.0.0.1.2" Height="700" Width="1500" ResizeMode="NoResize">
+        Title="Моделирование задач электротомографии на примере шара (Кузнецов Г.А., Кузнецова А.В.) v.0.0.1.3" Height="700" Width="1500" ResizeMode="NoResize">
     <Window.DataContext>
         <local:AppWindowViewModel/>
     </Window.DataContext>

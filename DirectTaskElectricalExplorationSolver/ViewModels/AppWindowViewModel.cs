@@ -310,6 +310,13 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                             + " R-" + SphereRadius.ToString() + "м"
                             + " h-" + SphereDepth.ToString() + "м";
 
+                        // Проверка папки на существование
+                        if (Directory.Exists(DirectoryPath + "\\" + anomalyDescription.AnomalyDescription))
+                        {
+                            MessageBox.Show("Папка с такими данными уже существует");
+                            return;
+                        }
+
                         // Блок начала расчётов
                         double ProfileLength = Math.Round(2 * (PicketCount - 1) * (HalfDistanceBetweenMN), 4);
                         double StartProfilePoint = Math.Round((ProfileLength / 2) * -1, 4);
@@ -341,11 +348,16 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                         }
                         else
                         {
+                            // Обновление списка подписей должно производиться обязательно
                             TextLabels = new List<TextLabel>();
                         }
 
+                        // Создание отдельной папки для результатов
+                        string FilePath = DirectoryPath + "\\" + anomalyDescription.AnomalyDescription;
+                        Directory.CreateDirectory(FilePath);
+
                         // Операции с файлом вывода информации (формат .dat)
-                        using (StreamWriter writer = new StreamWriter(DirectoryPath + "\\" + anomalyDescription.AnomalyDescription + ".dat", false))
+                        using (StreamWriter writer = new StreamWriter(FilePath + "\\" + anomalyDescription.AnomalyDescription + ".dat", false))
                         {
                             await writer.WriteLineAsync(DescriptionToStringTranslator.Translate(anomalyDescription));
                         }
