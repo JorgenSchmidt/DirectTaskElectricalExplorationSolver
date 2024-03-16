@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BbFCjbksxNMrHT/4fgcPfRGhA8t4RExmZy4RqgJLBKOcfv0GdMhraNol7gikGGE2xNYQjJRqQqh3bhF15huQJA==",
+  "dgSpecHash": "W3d/ovPO4pnYLG567nIF+kiSSrlMx9JiAwZDAs8q5AinW3KZ6aqpufdJBWeesZmHaOH78ROoTb/Ig2pr98RgMw==",
   "success": true,
-  "projectFilePath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Joe\\.nuget\\packages\\commonservicelocator\\2.0.4\\commonservicelocator.2.0.4.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\prism.core\\7.2.0.1422\\prism.core.7.2.0.1422.nupkg.sha512",
+    "C:\\Users\\Joe\\.nuget\\packages\\prism.wpf\\7.2.0.1422\\prism.wpf.7.2.0.1422.nupkg.sha512"
+  ],
   "logs": []
 }

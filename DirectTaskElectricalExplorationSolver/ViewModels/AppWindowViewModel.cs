@@ -1,16 +1,16 @@
-﻿using Core.Entities;
+﻿using Core.Constants;
+using Core.Entities;
 using Core.Entities.GraphicShellEntities;
 using DirectTaskElectricalExplorationSolver.AppServise;
 using GFDirectTasksSolver.ViewModelService;
 using Model.CalculateAnomalyValueService;
+using Model.FileService;
 using Model.GraphicShell;
 using Model.StringOperationService;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
 
 namespace DirectTaskElectricalExplorationSolver.ViewModels
 {
@@ -125,7 +125,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
         #endregion
 
         #region переменные для входных данных (моделируемая среда)
-        public int picketCount;
+        public int picketCount = 12;
         public int PicketCount
         {
             get
@@ -139,7 +139,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double halfDistanceBetweenMN;
+        public double halfDistanceBetweenMN = 5;
         public double HalfDistanceBetweenMN
         {
             get
@@ -153,7 +153,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double hostResistance;
+        public double hostResistance = 1;
         public double HostResistance
         {
             get
@@ -167,7 +167,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double sphereResistance;
+        public double sphereResistance = 0.1;
         public double SphereResistance
         {
             get
@@ -181,7 +181,35 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double amperageStrenght;
+        public double hostPolarzability = 0.02;
+        public double HostPolarzability
+        {
+            get
+            {
+                return hostPolarzability;
+            }
+            set
+            {
+                hostPolarzability = value;
+                CheckChanges();
+            }
+        }
+
+        public double spherePolarzability = 0.2;
+        public double SpherePolarzability
+        {
+            get
+            {
+                return spherePolarzability;
+            }
+            set
+            {
+                spherePolarzability = value;
+                CheckChanges();
+            }
+        }
+
+        public double amperageStrenght = 1;
         public double AmperageStrength
         {
             get
@@ -195,7 +223,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double sphereDepth;
+        public double sphereDepth = 10;
         public double SphereDepth
         {
             get
@@ -209,7 +237,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double sphereRadius; 
+        public double sphereRadius = 4; 
         public double SphereRadius
         {
             get
@@ -222,19 +250,34 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                 CheckChanges();
             }
         }
-        #endregion
 
-        #region переменные для входных данных (файловая система компьютера)
-        public string? directoryPath;
-        public string? DirectoryPath
+        public bool calculateMediavalPoint = false;
+
+        public bool CalculateMediavalPoint
         {
             get
             {
-                return directoryPath;
+                return calculateMediavalPoint;
             }
             set
             {
-                directoryPath = value;
+                calculateMediavalPoint = value;
+                CheckChanges();
+            }
+        }
+        #endregion
+
+        #region переменные для входных данных (файловая система компьютера)
+        public string? directoryName;
+        public string? DirectoryName
+        {
+            get
+            {
+                return directoryName;
+            }
+            set
+            {
+                directoryName = value;
                 CheckChanges();
             }
         }
@@ -249,6 +292,10 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                 async (obj) =>
                     {
                         // Блок обработки исключительных случаев
+                        if (!Directory.Exists(FileSystemConstants.OutputPathName))
+                        {
+                            Directory.CreateDirectory(FileSystemConstants.OutputPathName);
+                        }
                         if (PicketCount < 4 || PicketCount % 2 == 1)
                         {
                             MessageBox.Show("Количество пикетов не может быть меньше, чем \"4\" или являться нечётным числом.");
@@ -271,7 +318,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                         }
                         if (HostResistance < 10 * SphereResistance)
                         {
-                            MessageBox.Show("Значение удельного сопротивления вмещающих пород должно превышать сопротивление шара более чем в 10 раз.");
+                            MessageBox.Show("Значение удельного сопротивления вмещающих пород\n должно превышать сопротивление шара более чем в 10 раз.");
                             return;
                         }
                         if (AmperageStrength <= 0)
@@ -294,28 +341,45 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                             MessageBox.Show("Значение глубины залегания шара должно превышать его радиус более чем в 1.5 раза.");
                             return;
                         }
-                        if (!Directory.Exists(DirectoryPath))
+                        if (    !(HostPolarzability < SpherePolarzability
+                                && (HostPolarzability > 0 && HostPolarzability < 1)
+                                && (SpherePolarzability > 0 && SpherePolarzability < 1)) )
                         {
-                            MessageBox.Show("Введите путь до существующей директории.");
+                            if (HostPolarzability > 0 && SpherePolarzability > 0)
+                            {
+                                var Message = "Значение поляризуемости для шара должно быть строго больше чем значение поляризуемости для вмещающей среды.\n"
+                                    + "Так же значение поляризуемости должно быть в пределах от 0 до 1.";
+                                MessageBox.Show(Message);
+                                return;
+                            }
+                        }
+                        if (   DirectoryName.Contains('/') 
+                            || DirectoryName.Contains('\\')
+                            || DirectoryName.Contains(':')
+                            || DirectoryName.Contains('*')
+                            || DirectoryName.Contains('?')
+                            || DirectoryName.Contains('\"')
+                            || DirectoryName.Contains('<')
+                            || DirectoryName.Contains('>')
+                            || DirectoryName.Contains('|'))
+                        {
+                            MessageBox.Show("Windows запрещает использовать в имени директории или файла символы:\n \\ \n / \n : \n * \n ? \n \" \n < \n > \n |");
                             return;
                         }
-
-                        // Блок инициализации переменной с описанием и значениями аномалии электрического поля
-                        Description anomalyDescription = new Description();
-                        anomalyDescription.AnomalyDescription =
-                              "ВЭЗ ПКК-" + PicketCount.ToString()
-                            + " MN-" + (HalfDistanceBetweenMN * 2).ToString() + "м"
-                            + " dρ-" + (Math.Round(HostResistance - SphereResistance,6)).ToString() + "Ом°м"
-                            + " I-" + AmperageStrength.ToString() + "A" 
-                            + " R-" + SphereRadius.ToString() + "м"
-                            + " h-" + SphereDepth.ToString() + "м";
 
                         // Проверка папки на существование
-                        if (Directory.Exists(DirectoryPath + "\\" + anomalyDescription.AnomalyDescription))
+                        var CurrentPath = FileSystemConstants.OutputPathName + "\\" + DirectoryName;
+                        if (Directory.Exists(CurrentPath))
                         {
-                            MessageBox.Show("Папка с такими данными уже существует");
-                            return;
+                            MessageBox.Show("Папка с таким названием уже существует, результаты измерения будут записаны именно в неё.");
                         }
+                        else
+                        {
+                            Directory.CreateDirectory(CurrentPath);
+                        }
+
+                        // Блок инициализации основной локальной переменной данных
+                        Description anomalyDescription = new Description();
 
                         // Блок начала расчётов
                         double ProfileLength = Math.Round(2 * (PicketCount - 1) * (HalfDistanceBetweenMN), 4);
@@ -324,7 +388,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                         double StepByProfile = Math.Round(HalfDistanceBetweenMN * 2, 2);
 
                         // Блок присваивания полю AnomalyObjects объекта с именем anomalyDescription значения из метода
-                        anomalyDescription.AnomalyObjects = AnomalyDescriptionGetter.GetAnomalyDescription(
+                        anomalyDescription = AnomalyDescriptionGetter.GetMainAnomalyDescription(
                                                                                                             // Конфигурация профиля наблюдений
                                                                                                             PicketCount, 
                                                                                                             StartProfilePoint, 
@@ -335,33 +399,104 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                                                                                                             SphereRadius, 
                                                                                                             // Геофизика моделируемой среды
                                                                                                             HostResistance, 
+                                                                                                            HostPolarzability,
                                                                                                             SphereResistance, 
-                                                                                                            AmperageStrength
-                                                                                                        ).AnomalyObjects;
+                                                                                                            SpherePolarzability,
+                                                                                                            AmperageStrength,
+                                                                                                            // Конфигурация вычислений
+                                                                                                            CalculateMediavalPoint
+                                                                                                        );
 
                         // Операции с переменными, ассоциированными с графической составляющей приложения
                         AnomalyModelLines = LineSketcher.DrawLines(anomalyDescription);
                         AnomalyModelSpheres = SphereSketcher.DrawSpheres(ProfileLength, PicketCount, SphereDepth, SphereRadius, anomalyDescription);
-                        if (PicketCount < 40)
+
+                        if (PicketCount < 40) // Обновление списка подписей должно производиться обязательно
                         {
                             TextLabels = TextSketcher.WriteLabels(PicketCount, AnomalyModelSpheres);
                         }
                         else
                         {
-                            // Обновление списка подписей должно производиться обязательно
                             TextLabels = new List<TextLabel>();
                         }
 
-                        // Создание отдельной папки для результатов
-                        string FilePath = DirectoryPath + "\\" + anomalyDescription.AnomalyDescription;
-                        Directory.CreateDirectory(FilePath);
+                        // Создание краткого текстового описания входных параметров моделирования, используется для задания имени файлу
+                        string MedPoint = "";
 
-                        // Операции с файлом вывода информации (формат .dat)
-                        using (StreamWriter writer = new StreamWriter(FilePath + "\\" + anomalyDescription.AnomalyDescription + ".dat", false))
+                        if (anomalyDescription.MediavalPointWasCalculate)
                         {
-                            await writer.WriteLineAsync(DescriptionToStringTranslator.Translate(anomalyDescription));
+                            MedPoint = " СТ-НР";
                         }
+                        else
+                        {
+                            MedPoint = " СТ-Р";
+                        }
+
+                        string Polar = ""; 
+
+                        if (anomalyDescription.AddiveNotNull)
+                        {
+                            Polar = " ПЛ-Р";
+                        }
+                        else
+                        {
+                            Polar = " ПЛ-НР";
+                        }
+                        
+                        anomalyDescription.AnomalyDescription =
+                              "ВЭЗ ПКК-" + PicketCount.ToString()
+                            + MedPoint 
+                            + Polar
+                            + " MN-" + (HalfDistanceBetweenMN * 2).ToString() + "м"
+                            + " dρ-" + (Math.Round(HostResistance - SphereResistance, 3)).ToString() + "Ом°м"
+                            + " dη-" + (Math.Round(SpherePolarzability - HostPolarzability, 3) * 100).ToString() + "%"
+                            + " I-" + AmperageStrength.ToString() + "A"
+                            + " R-" + SphereRadius.ToString() + "м"
+                            + " h-" + SphereDepth.ToString() + "м";
+
+                        // Генерация контента для файлов (по каждому моделируемому параметру) 
+                        // на основе полученных в ходе моделирования данных и сохранение их в соответсвующие файлы
+
+                        var ResistanceData = DescriptionToStringTranslator.TranslateWithResistance(anomalyDescription);
+
+                        ContentWriters.WriteContentToFile(CurrentPath + "\\" + "СОПР " + anomalyDescription.AnomalyDescription + ".dat", ResistanceData, true);
+                        
+                        if (anomalyDescription.AddiveNotNull)
+                        {
+                            var AddiveResistanceData = DescriptionToStringTranslator.TranslateWithAddiveResistance(anomalyDescription);
+                            var EtaData = DescriptionToStringTranslator.TranslateWithPolarzability(anomalyDescription);
+
+                            ContentWriters.WriteContentToFile(CurrentPath + "\\" + "ДСОПР " + anomalyDescription.AnomalyDescription + ".dat", AddiveResistanceData, true);
+                            ContentWriters.WriteContentToFile(CurrentPath + "\\" + "ПОЛЯР " + anomalyDescription.AnomalyDescription + ".dat", EtaData, true);
+                        }
+
                     }
+                );
+            }
+        }
+
+        public Command Help
+        {
+            get
+            {
+                return new Command(
+                    obj =>
+                    {
+                        string content =    "Данная программа используется для моделирования результатов электротомографии для шара.\n\n"
+                                          + "Для начала работы нужно ввести основные входные параметры, а так же название директории, \n"
+                                          + "при этом поле для названия директории можно оставить пустым (файлы с данными будут сохранены непосредственно в папку Output корневого каталога программы). \n"
+                                          + "Если поле ввода директории сохранения будет заполнено, то файлы с данными сохранятся по пути Output\\<Название директории>. \n\n"
+                                          
+                                          + "Требования для входных параметров: \n"
+                                          + "1. Количество пикетов - чётное число\n"
+                                          + "2. Значение удельного сопротивления вмещающих пород должно превышать сопротивление шара более чем в 10 раз.\n"
+                                          + "3. Значение поляризуемости для шара должно быть в 10 раз больше значения поляризуемости вмещающих пород и находиться в пределах от 0 до 1.\n\n"
+                                          
+                                          + "Значения поляризуемости можно оставить равными нулю, тогда будет расчитаны значения только для КС.\n"
+                                          + "Также поддерживается возможность исключить из расчётов значения при которых Х=0 (середина профиля наблюдений)\n";
+
+                        MessageBox.Show(content);
+                    }    
                 );
             }
         }

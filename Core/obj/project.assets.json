@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
+      "projectUniqueName": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
+      "projectPath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
-      "outputPath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\obj\\",
+      "outputPath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",

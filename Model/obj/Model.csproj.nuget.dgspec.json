@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj": {}
+    "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj": {}
   },
   "projects": {
-    "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj": {
+    "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
+        "projectPath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
-        "outputPath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\obj\\",
+        "outputPath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,32 +59,32 @@
         }
       }
     },
-    "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj": {
+    "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj",
+        "projectUniqueName": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj",
+        "projectPath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
-        "outputPath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\obj\\",
+        "outputPath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net7.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj": {
-                "projectPath": "D:\\work\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj"
+              "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj": {
+                "projectPath": "D:\\work\\Архив №2\\ЭГФ_И\\DirectTaskElectricalExplorationSolver\\Core\\Core.csproj"
               }
             }
           }
@@ -96,8 +96,14 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "Prism.Wpf": {
+              "target": "Package",
+              "version": "[7.2.0.1422, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

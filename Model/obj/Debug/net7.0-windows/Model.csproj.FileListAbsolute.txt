@@ -1,0 +1,30 @@
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.csproj.AssemblyReference.cache
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.AssemblyInfoInputs.cache
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.AssemblyInfo.cs
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.csproj.CoreCompileInputs.cache
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Model.deps.json
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Model.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Model.pdb
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Core.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Core.pdb
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.csproj.CopyComplete
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\refint\Model.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.pdb
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\ref\Model.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Model.deps.json
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Model.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Model.pdb
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Core.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\bin\Debug\net7.0-windows\Core.pdb
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.csproj.AssemblyReference.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.AssemblyInfoInputs.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.AssemblyInfo.cs
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.csproj.CoreCompileInputs.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.csproj.CopyComplete
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\refint\Model.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\Model.pdb
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\Model\obj\Debug\net7.0-windows\ref\Model.dll

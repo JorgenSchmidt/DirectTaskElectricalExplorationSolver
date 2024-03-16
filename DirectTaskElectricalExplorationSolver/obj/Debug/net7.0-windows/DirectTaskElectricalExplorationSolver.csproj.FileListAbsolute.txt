@@ -25,3 +25,38 @@ D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExpl
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Model.pdb
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.csproj.CopyComplete
 D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\CommonServiceLocator.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Prism.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Prism.Wpf.dll
+D:\work\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\System.Windows.Interactivity.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.exe
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.deps.json
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.runtimeconfig.json
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.pdb
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\CommonServiceLocator.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Prism.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Prism.Wpf.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\System.Windows.Interactivity.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Core.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Model.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Core.pdb
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\bin\Debug\net7.0-windows\Model.pdb
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.csproj.AssemblyReference.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\Views\AppWindow.g.cs
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\App.g.cs
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver_MarkupCompile.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver_MarkupCompile.lref
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\Views\AppWindow.baml
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.g.resources
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.GeneratedMSBuildEditorConfig.editorconfig
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.AssemblyInfoInputs.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.AssemblyInfo.cs
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.csproj.CoreCompileInputs.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.csproj.CopyComplete
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\refint\DirectTaskElectricalExplorationSolver.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.pdb
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.genruntimeconfig.cache
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\ref\DirectTaskElectricalExplorationSolver.dll

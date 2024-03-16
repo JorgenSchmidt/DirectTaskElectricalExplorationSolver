@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 		<Reference Include="PresentationCore">
-			<HintPath>..\..\..\..\codes\cslibs\presentationcore.dll</HintPath>
+			<HintPath>..\..\..\..\..\..\codes\cslibs\presentationcore.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

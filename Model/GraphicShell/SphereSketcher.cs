@@ -1,6 +1,6 @@
-﻿using Core.Entities;
+﻿using Core.Constants;
+using Core.Entities;
 using Core.Entities.GraphicShellEntities;
-using System.Windows.Media;
 
 namespace Model.GraphicShell
 {
@@ -34,10 +34,10 @@ namespace Model.GraphicShell
                         {
                             X = Convert.ToInt32((Value.X) * TranslateKoefficient_X) + 500 - Convert.ToInt32(100 / PicketCount)/2,
                             Y = Convert.ToInt32(Value.H * TranslateKoefficient_Y) + 50 - Convert.ToInt32(100 / PicketCount)/2,
-                            Color = Brushes.Black,
+                            Color = GraphicsConstants.ExplorationPoints,
                             Radius = Convert.ToInt32(100 / PicketCount) + 1,
                             StrokeThicknessValue = 1,
-                            AnomalyValueOnPoint = Value.Value,
+                            AnomalyValueOnPoint = Value.Resistance,
                             CanBeSigned = true
                         }
                     );
@@ -52,7 +52,7 @@ namespace Model.GraphicShell
                     {
                         X = 50 - Convert.ToInt32(100 / PicketCount) / 2 + Convert.ToInt32((i * (ProfileLength / (PicketCount - 1))) * TranslateKoefficient_X),
                         Y = 50 - Convert.ToInt32(100 / PicketCount) / 2,
-                        Color = Brushes.Blue,
+                        Color = GraphicsConstants.Pickets,
                         Radius = Convert.ToInt32(100 / PicketCount) + 1,
                         StrokeThicknessValue = 1,
                         CanBeSigned = false
@@ -66,7 +66,7 @@ namespace Model.GraphicShell
                 {
                     X = 500 - Convert.ToInt32(SphereDiameter * TranslateKoefficient_Y)/2,
                     Y = Convert.ToInt32(SphereDepth * TranslateKoefficient_Y) + 50 - Convert.ToInt32(SphereDiameter * TranslateKoefficient_Y) / 2,
-                    Color = Brushes.Red,
+                    Color = GraphicsConstants.Sphere,
                     Radius = Convert.ToInt32(SphereDiameter * TranslateKoefficient_Y) + 1,
                     StrokeThicknessValue = 2,
                     CanBeSigned = false

@@ -11,8 +11,16 @@
         /// </summary>
         public double H;
         /// <summary>
-        /// Значение аномалии в точке наблюдения
+        /// Значение кажущегося сопротивления в точке наблюдения
         /// </summary>
-        public double Value;
+        public double Resistance;
+        /// <summary>
+        /// Значение КС с учётом эта-составляющей
+        /// </summary>
+        public double Resistance_e;
+        /// <summary>
+        /// Поляризуемость
+        /// </summary>
+        public double Polarzability;
     }
 }
