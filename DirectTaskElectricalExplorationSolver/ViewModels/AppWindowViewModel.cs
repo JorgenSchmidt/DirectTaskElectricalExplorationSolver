@@ -1,4 +1,5 @@
-﻿using Core.Constants;
+﻿using Core.Configuration;
+using Core.Constants;
 using Core.Entities;
 using Core.Entities.GraphicShellEntities;
 using DirectTaskElectricalExplorationSolver.AppServise;
@@ -125,7 +126,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
         #endregion
 
         #region переменные для входных данных (моделируемая среда)
-        public int picketCount = 12;
+        public int picketCount = MainParameters.PicketCount;
         public int PicketCount
         {
             get
@@ -139,7 +140,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double halfDistanceBetweenMN = 5;
+        public double halfDistanceBetweenMN = MainParameters.HalfDistanceBetweenMN;
         public double HalfDistanceBetweenMN
         {
             get
@@ -153,63 +154,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double hostResistance = 1;
-        public double HostResistance
-        {
-            get
-            {
-                return hostResistance;
-            }
-            set
-            {
-                hostResistance = value;
-                CheckChanges();
-            }
-        }
-
-        public double sphereResistance = 0.1;
-        public double SphereResistance
-        {
-            get
-            {
-                return sphereResistance;
-            }
-            set
-            {
-                sphereResistance = value;
-                CheckChanges();
-            }
-        }
-
-        public double hostPolarzability = 0.02;
-        public double HostPolarzability
-        {
-            get
-            {
-                return hostPolarzability;
-            }
-            set
-            {
-                hostPolarzability = value;
-                CheckChanges();
-            }
-        }
-
-        public double spherePolarzability = 0.2;
-        public double SpherePolarzability
-        {
-            get
-            {
-                return spherePolarzability;
-            }
-            set
-            {
-                spherePolarzability = value;
-                CheckChanges();
-            }
-        }
-
-        public double amperageStrenght = 1;
+        public double amperageStrenght = MainParameters.AmperageStrength;
         public double AmperageStrength
         {
             get
@@ -223,7 +168,63 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double sphereDepth = 10;
+        public double hostResistance = MainParameters.HostResistance;
+        public double HostResistance
+        {
+            get
+            {
+                return hostResistance;
+            }
+            set
+            {
+                hostResistance = value;
+                CheckChanges();
+            }
+        }
+
+        public double sphereResistance = MainParameters.SphereResistance;
+        public double SphereResistance
+        {
+            get
+            {
+                return sphereResistance;
+            }
+            set
+            {
+                sphereResistance = value;
+                CheckChanges();
+            }
+        }
+
+        public double hostPolarzability = MainParameters.HostPolarzability;
+        public double HostPolarzability
+        {
+            get
+            {
+                return hostPolarzability;
+            }
+            set
+            {
+                hostPolarzability = value;
+                CheckChanges();
+            }
+        }
+
+        public double spherePolarzability = MainParameters.SpherePolarzability;
+        public double SpherePolarzability
+        {
+            get
+            {
+                return spherePolarzability;
+            }
+            set
+            {
+                spherePolarzability = value;
+                CheckChanges();
+            }
+        }
+
+        public double sphereDepth = MainParameters.SphereDepth;
         public double SphereDepth
         {
             get
@@ -237,7 +238,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public double sphereRadius = 4; 
+        public double sphereRadius = MainParameters.SphereRadius; 
         public double SphereRadius
         {
             get
@@ -251,7 +252,7 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
             }
         }
 
-        public bool calculateMediavalPoint = false;
+        public bool calculateMediavalPoint = true;
 
         public bool CalculateMediavalPoint
         {
@@ -352,6 +353,10 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                                 MessageBox.Show(Message);
                                 return;
                             }
+                        }
+                        if (String.IsNullOrEmpty(DirectoryName))
+                        {
+                            return;
                         }
                         if (   DirectoryName.Contains('/') 
                             || DirectoryName.Contains('\\')
@@ -470,6 +475,35 @@ namespace DirectTaskElectricalExplorationSolver.ViewModels
                             ContentWriters.WriteContentToFile(CurrentPath + "\\" + "ПОЛЯР " + anomalyDescription.AnomalyDescription + ".dat", EtaData, true);
                         }
 
+                    }
+                );
+            }
+        }
+
+        public Command CurrentParametersToMemory
+        {
+            get
+            {
+                return new Command(
+                    obj =>
+                    {
+                        string ConfigFileName = FileSystemConstants.ConfigurationPathName
+                                        + "\\"
+                                        + FileNamesConstants.ParametersConfigFileName;
+
+                        string content =
+                              ("Кол-во_пикетов=" + PicketCount.ToString() + "\n"
+                            + "Знач_MN2=" + HalfDistanceBetweenMN.ToString() + "\n"
+                            + "Сила_тока=" + AmperageStrength.ToString() + "\n"
+                            + "Вмещ_сопр=" + HostResistance.ToString() + "\n"
+                            + "Шар_сопр=" + SphereResistance.ToString() + "\n"
+                            + "Вмещ_поляр=" + HostPolarzability.ToString() + "\n"
+                            + "Шар_поляр=" + SpherePolarzability.ToString() + "\n"
+                            + "Глуб_залег=" + SphereDepth.ToString() + "\n"
+                            + "Рад_шар=" + SphereRadius.ToString()).Replace('.',',');
+
+                        ContentWriters.WriteContentToFile(ConfigFileName, content, true);
+                        MessageBox.Show("Файл \"Параметры по умолчанию\" перезаписан.");
                     }
                 );
             }

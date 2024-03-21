@@ -60,3 +60,4 @@ D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTa
 D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.pdb
 D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver.genruntimeconfig.cache
 D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\ref\DirectTaskElectricalExplorationSolver.dll
+D:\work\Архив №2\ЭГФ_И\DirectTaskElectricalExplorationSolver\DirectTaskElectricalExplorationSolver\obj\Debug\net7.0-windows\DirectTaskElectricalExplorationSolver_Content.g.cs
